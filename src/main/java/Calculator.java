@@ -28,7 +28,7 @@ public class Calculator {
 
     public void showSumByPerson() {
         System.out.printf(
-                "Каждый человек должен заплатить по %s.%n",
+                "Каждый человек должен заплатить %s.",
                 PriceFormatter.getHumanizedPrice(totalSum / personsCount)
         );
     }
