@@ -8,38 +8,41 @@ public class TerminalReader {
         return scanner.next();
     }
 
-    static float readFloat(String message) {
-        System.out.println(message);
-
-        String stringValue = scanner.next();
-
+    public static float readFloat(String message) {
         float resultValue;
-        try {
-            resultValue = Float.parseFloat(stringValue);
-        } catch (NumberFormatException e) {
-            System.out.printf("\"%s\" не является числом%n", stringValue);
 
-            return readFloat(message);
+        while (true) {
+            System.out.println(message);
+
+            String stringValue = scanner.next();
+
+            try {
+                resultValue = Float.parseFloat(stringValue);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.printf("\"%s\" не является числом%n", stringValue);
+            }
         }
-
 
         return resultValue;
     }
 
-    static int readInt(String message) {
-        System.out.println(message);
-
-        String stringValue = scanner.next();
-
+    public static int readInt(String message) {
         int resultValue;
-        try {
-            resultValue = Integer.parseInt(stringValue);
-        } catch (NumberFormatException e) {
-            System.out.printf("\"%s\" не является числом%n", stringValue);
 
-            return readInt(message);
+        while (true) {
+            System.out.println(message);
+
+            String stringValue = scanner.next();
+
+            try {
+                resultValue = Integer.parseInt(stringValue);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.printf("\"%s\" не является числом%n", stringValue);
+            }
+
         }
-
 
         return resultValue;
     }

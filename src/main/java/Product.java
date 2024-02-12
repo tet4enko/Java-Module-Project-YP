@@ -9,7 +9,17 @@ public class Product {
 
     static Product read() {
         String name = TerminalReader.readString("Введите название товара:");
-        float price = TerminalReader.readFloat("Введите цену товара:");
+        float price;
+
+        while (true) {
+            price = TerminalReader.readFloat("Введите цену товара:");
+
+            if (price >= 0) {
+                break;
+            }
+
+            System.out.println("Цена не должна быть отрицательным числом!");
+        }
 
         return new Product(name, price);
     }

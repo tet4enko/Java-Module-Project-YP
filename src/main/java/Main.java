@@ -1,6 +1,6 @@
 public class Main {
-    final static private int MIN_PEOPLE_COUNT = 2;
-    final static private String FINISH_COMMAND = "Завершить";
+    private static final int MIN_PEOPLE_COUNT = 2;
+    private static final String FINISH_COMMAND = "Завершить";
 
     static int readPersonsCount() {
         int personsCount;
@@ -36,7 +36,7 @@ public class Main {
 
             calculator.add(product);
 
-            String command = TerminalReader.readString("Хотите добавить еще товар ?");
+            String command = TerminalReader.readString("Хотите добавить еще товар ? Если нет, введите \"завершить\".");
 
             if (command.equalsIgnoreCase(FINISH_COMMAND)) {
                 break;
